@@ -1,0 +1,24 @@
+<h1>Simple</h1>
+<div class="ink-grid">
+  <div class="column-group">
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number">{{ right }}○</div>
+        <div class="button-group">
+          <button class="ink-button all-50 red" (click)="onIncreaseRight()">○+1</button>
+          <button class="ink-button all-50 red push-right" (click)="onDecreaseRight()">○-1</button>
+        </div>
+      </div>
+    </div>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number">{{ miss }}×</div>
+        <div class="button-group">
+          <button class="ink-button all-50 blue" (click)="onIncreaseMiss()">×+1</button>
+          <button class="ink-button all-50 blue push-right" (click)="onDecreaseMiss()">×-1</button>
+        </div>
+      </div>
+    </div>
+    <button class="ink-button all-100" (click)="onReset()">Reset &amp; Record to Stats</button>
+  </div>
+</div>
