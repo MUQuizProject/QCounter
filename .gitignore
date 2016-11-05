@@ -32,6 +32,9 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 
 #firebase
 .firebaserc
+=======
+>>>>>>> temp1

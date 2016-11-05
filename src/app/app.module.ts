@@ -20,7 +20,8 @@ import { MnComponent } from './mn/mn.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
