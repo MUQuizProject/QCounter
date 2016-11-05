@@ -3,22 +3,22 @@
   <div class="column-group">
     <div class="all-50">
       <div class="column-group">
-        <div class="all-100 align-center number">{{ right }}○</div>
+        <div class="all-100 align-center number">{{ right }}<i class="fa fa-circle-o" aria-hidden="true"></i></div>
         <div class="button-group">
-          <button class="ink-button red all-100" (click)="onIncreaseRight()">○</button>
+          <button class="ink-button red all-100" (click)="onIncreaseRight()"><i class="fa fa-circle-o" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
     <div class="all-50">
       <div class="column-group">
-        <div class="all-100 align-center number">{{ miss }}×</div>
+        <div class="all-100 align-center number">{{ miss }}<i class="fa fa-times" aria-hidden="true"></i></div>
         <div class="button-group">
-          <button class="ink-button blue all-100" (click)="onIncreaseMiss()">×</button>
+          <button class="ink-button blue all-100" (click)="onIncreaseMiss()"><i class="fa fa-times" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
     <div class="button-group all-100">
-      <button class="ink-button push-center" (click)="undo()">Undo</button>
+      <button class="ink-button push-center" (click)="undo()"><i class="fa fa-undo" aria-hidden="true"></i>Undo</button>
       <button class="ink-button push-center" (click)="reset()">Reset &amp; Record to Stats</button>
     </div>
   </div>

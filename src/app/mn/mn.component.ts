@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { MnInterface } from '../qcinterface';
+import { configValidator } from './validator';
 
 @Component({
   selector: 'app-mn',
@@ -14,14 +15,22 @@ export class MnComponent implements OnInit {
   right_plus: number;
   miss_minus: number;
   undo_stack: MnInterface[];
+  configForm: FormGroup;
 
-  constructor() {
+  rightPlus = new FormControl("",Validators.compose([Validators.required, configValidator]));
+  missMinus = new FormControl("",Validators.compose([Validators.required, configValidator]));
+
+  constructor(fb:FormBuilder) {
     this.right = 0;
     this.miss = 0;
     this.points = 0;
     this.right_plus = 1;
     this.miss_minus = 1;
     this.undo_stack = [];
+    this.configForm = fb.group({
+      rightPlus: this.rightPlus,
+      missMinus: this.missMinus
+    });
   }
 
   ngOnInit() {
@@ -48,9 +57,16 @@ export class MnComponent implements OnInit {
     }
   }
 
-  changeParameters(value:any){
-    console.log(value);
-    this.right_plus = parseInt(value.plus);
-    this.miss_minus = parseInt(value.minus);
+  changeParameters(){
+    console.log(this.configForm.value);
+    this.right_plus = parseInt(this.configForm.value.rightPlus);
+    this.miss_minus = parseInt(this.configForm.value.missMinus);
+  }
+
+  reset():void {
+    this.right = 0;
+    this.miss  = 0;
+    this.points = 0;
+    this.undo_stack = [];
   }
 }
