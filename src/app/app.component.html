@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="ink-navigation">
+    <ul class="menu horizontal black">
+        <li class="heading active"><a href="#">Home</a></li>
+        <li>
+            <a href="javascript:void(0);">Choose a Rule</a>
+            <ul class="submenu">
+                <li><a [routerLink]="['/simple']">Simple</a></li>
+                <li><a [routerLink]="['/mn']">+m/-n</a></li>
+                <li class="disabled"><a href="#">10 by 10</a></li>
+                <li class="disabled"><a href="#">Swedish 10</a></li>
+                <li class="disabled"><a href="#">10 divide 10</a></li>
+            </ul>
+        </li>
+        <li><a [routerLink]="['/explain']">What's this?</a></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+<footer>
+  Coded by M Uesaka
+</footer>
