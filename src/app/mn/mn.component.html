@@ -1,0 +1,46 @@
+<h1>+m/-n</h1>
+<div class="ink-grid">
+  <div class="column-group horizontal-gutters">
+    <div class="all-100 align-center number">
+      {{points}}pts
+    </div>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number-sub">{{ right }}○</div>
+        <div class="button-group">
+          <button class="ink-button red all-100" (click)="onIncreaseRight()">○(+{{right_plus}} pts)</button>
+        </div>
+      </div>
+    </div>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number-sub">{{ miss }}×</div>
+        <div class="button-group">
+          <button class="ink-button blue all-100" (click)="onIncreaseMiss()">×(-{{miss_minus}}pts)</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-group all-100">
+      <button class="ink-button push-center" (click)="undo()">Undo</button>
+      <button class="ink-button push-center" (click)="reset()">Reset &amp; Record to Stats</button>
+    </div>
+  </div>
+</div>
+<h2>Configulation</h2>
+<form #form="ngForm" (submit)="changeParameters(form.value)" class="ink-form">
+  <div class="column-group gutters">
+    <div class="control-group all-33">
+      <label for="right">正解時</label>
+      <div class="control">
+        <input type="text" name="plus" placeholder="1" ngModel>
+      </div>
+    </div>
+    <div class="control-group all-33">
+      <label for="miss">誤答時</label>
+      <div class="control">
+        <input type="text" name="minus" placeholder="1" ngModel>
+      </div>
+    </div>
+    <button class="ink-button all-33 green" type="submit">Change!</button>
+  </div>
+</form>

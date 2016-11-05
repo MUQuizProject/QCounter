@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "immutable": "registry:dt/immutable#3.8.1+20160608070634"
+  },
+  "dependencies": {
+    "lodash": "registry:npm/lodash#4.0.0+20161015015725"
+  }
+}
