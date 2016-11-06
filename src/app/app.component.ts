@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SimpleComponent } from './simple/simple.component';
+import { StatService } from './stat.service';
+import { Subscription } from 'rxjs/subscription';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,4 @@ import { SimpleComponent } from './simple/simple.component';
 })
 
 export class AppComponent {
-  title = 'app works!';
 }

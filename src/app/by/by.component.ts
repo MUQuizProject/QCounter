@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { MnInterface } from '../qcinterface';
 import { configValidator } from './validator';
+import { StatService } from '../stat.service';
 
 @Component({
   selector: 'app-by',
@@ -18,7 +19,7 @@ export class ByComponent implements OnInit {
 
   missInitial = new FormControl("",Validators.compose([Validators.required, configValidator]));
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder, private statService: StatService) {
     this.right = 0;
     this.miss = 0;
     this.points = 0;
@@ -35,12 +36,14 @@ export class ByComponent implements OnInit {
   onIncreaseRight():void {
     this.undo_stack.push({right: this.right, miss: this.miss, points: this.points});
     this.right++;
+    this.statService.addStat({right: 1, miss: 0});
     this.calculate();
   }
 
   onIncreaseMiss():void {
     this.undo_stack.push({right: this.right, miss: this.miss, points: this.points});
     this.miss++;
+    this.statService.addStat({right: 0, miss: 1});
     this.calculate();
   }
 
@@ -50,6 +53,7 @@ export class ByComponent implements OnInit {
       this.right = previous_points.right;
       this.miss  = previous_points.miss;
       this.points = previous_points.points;
+      this.statService.undo();
     }
   }
 

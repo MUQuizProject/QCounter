@@ -9,6 +9,8 @@ import { routing } from './app.routes';
 import { ExplainComponent } from './explain/explain.component';
 import { MnComponent } from './mn/mn.component';
 import { ByComponent } from './by/by.component';
+import { StatComponent } from './stat/stat.component';
+import { StatService } from './stat.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ByComponent } from './by/by.component';
     SimpleComponent,
     ExplainComponent,
     MnComponent,
-    ByComponent
+    ByComponent,
+    StatComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import { ByComponent } from './by/by.component';
     routing,
     HttpModule
   ],
-  providers: [],
+  providers: [StatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

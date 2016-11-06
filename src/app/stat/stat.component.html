@@ -1,0 +1,19 @@
+<h1>Stats</h1>
+<div class="ink-grid">
+  あなたの今日の成績は以下の通りです．
+  <div class="column-group">
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number">{{ statService.total_right }}<i class="fa fa-circle-o" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number">{{ statService.total_miss }}<i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="button-group all-100">
+      <button class="ink-button push-center" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</div>

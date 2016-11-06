@@ -8,3 +8,8 @@ export interface MnInterface {
   miss: number;
   points: number;
 }
+
+export interface StatInterface{
+  right: number;
+  miss: number;
+}
