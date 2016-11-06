@@ -8,13 +8,15 @@ import { SimpleComponent } from './simple/simple.component';
 import { routing } from './app.routes';
 import { ExplainComponent } from './explain/explain.component';
 import { MnComponent } from './mn/mn.component';
+import { ByComponent } from './by/by.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleComponent,
     ExplainComponent,
-    MnComponent
+    MnComponent,
+    ByComponent
   ],
   imports: [
     BrowserModule,

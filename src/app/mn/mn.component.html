@@ -1,42 +1,44 @@
-<h1>+m/-n</h1>
-<div class="column-group horizontal-gutters">
-  <div class="all-100 align-center number">
-    {{points}}pts
-  </div>
-  <div class="all-50">
-    <div class="column-group">
-      <div class="all-100 align-center number-sub">{{ right }}<i class="fa fa-circle-o" aria-hidden="true"></i></div>
-      <div class="button-group">
-        <button class="ink-button red all-100" (click)="onIncreaseRight()"><i class="fa fa-circle-o" aria-hidden="true"></i>(+{{right_plus}}pts)</button>
+  <h1>+m/-n</h1>
+  <div class="column-group horizontal-gutters">
+    <div class="all-100 align-center number">
+      {{points}}pts
+    </div>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number-sub">{{ right }}<i class="fa fa-circle-o" aria-hidden="true"></i></div>
+        <div class="button-group">
+          <button class="ink-button red all-100" (click)="onIncreaseRight()"><i class="fa fa-circle-o" aria-hidden="true"></i>(+{{right_plus}}pts)</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="all-50">
-    <div class="column-group">
-      <div class="all-100 align-center number-sub">{{ miss }}<i class="fa fa-times" aria-hidden="true"></i></div>
-      <div class="button-group">
-        <button class="ink-button blue all-100" (click)="onIncreaseMiss()"><i class="fa fa-times" aria-hidden="true"></i>(-{{miss_minus}}pts)</button>
+    <div class="all-50">
+      <div class="column-group">
+        <div class="all-100 align-center number-sub">{{ miss }}<i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="button-group">
+          <button class="ink-button blue all-100" (click)="onIncreaseMiss()"><i class="fa fa-times" aria-hidden="true"></i>(-{{miss_minus}}pts)</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="button-group all-100">
-    <button class="ink-button push-center" (click)="undo()"><i class="fa fa-undo" aria-hidden="true"></i>Undo</button>
-    <button class="ink-button push-center" (click)="reset()">Reset &amp; Record to Stats</button>
-  </div>
-</div>
-<h2>Configulation</h2>
-<form [formGroup]="configForm" (submit)="changeParameters()" class="ink-form all-40 column-group gutters">
-  <div class="control-group all-100 validation" [class.error]="rightPlus.hasError('notInteger')">
-    <label for="right">正解時</label>
-    <div class="control">
-      <input type="text" placeholder="1" formControlName="rightPlus">
+    <div class="button-group all-100">
+      <button class="ink-button push-center" (click)="undo()"><i class="fa fa-undo" aria-hidden="true"></i>Undo</button>
+      <button class="ink-button push-center" (click)="reset()">Reset &amp; Record to Stats</button>
     </div>
   </div>
-  <div class="control-group all-100 validation" [class.error]="missMinus.hasError('notInteger')">
-    <label for="miss">誤答時</label>
-    <div class="control">
-      <input type="text" placeholder="1" formControlName="missMinus">
+  <h2>Configulation</h2>
+  <form [formGroup]="configForm" (submit)="changeParameters()" class="ink-form">
+    <div class="all-33 column-group gutters">
+      <div class="control-group all-100 validation" [class.error]="rightPlus.hasError('notInteger') && !rightPlus.hasError('required')">
+        <label for="right">正解時</label>
+        <div class="control">
+          <input type="text" placeholder="1" formControlName="rightPlus">
+        </div>
+      </div>
+      <div class="control-group all-100 validation" [class.error]="missMinus.hasError('notInteger') && !missMinus.hasError('required')">
+        <label for="miss">誤答時</label>
+        <div class="control">
+          <input type="text" placeholder="1" formControlName="missMinus">
+        </div>
+      </div>
+      <button class="ink-button green push-right" type="submit" [disabled]="!configForm.valid">Change!</button>
     </div>
-  </div>
-  <button class="ink-button green push-right" type="submit" [disabled]="!configForm.valid">Change!</button>
-</form>
+  </form>
