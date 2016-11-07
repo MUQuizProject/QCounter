@@ -2,15 +2,7 @@
     <ul class="menu horizontal black">
         <li class="heading active"><a [routerLink]="['/']">QCounter</a></li>
         <li>
-            <a href="javascript:void(0);">Rule</a>
-            <ul class="submenu">
-                <li><a [routerLink]="['/simple']">Simple</a></li>
-                <li><a [routerLink]="['/mn']">+m/-n</a></li>
-                <li><a [routerLink]="['/by']">10 by 10</a></li>
-                <li><a [routerLink]="['/updown']">10 up-down</a></li>
-                <li class="submenu--disabled"><a href="javascript:void(0);">Swedish 10</a></li>
-                <li class="submenu--disabled"><a href="javascript:void(0);">10 divide 10</a></li>
-            </ul>
+            <a [routerLink]="['/rule']">Rule</a>
         </li>
         <li><a [routerLink]="['/stat']">Stat</a></li>
     </ul>

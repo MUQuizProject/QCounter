@@ -12,6 +12,7 @@ import { ByComponent } from './by/by.component';
 import { StatComponent } from './stat/stat.component';
 import { StatService } from './stat.service';
 import { UpDownComponent } from './up-down/up-down.component';
+import { RuleChoiceComponent } from './rule-choice/rule-choice.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UpDownComponent } from './up-down/up-down.component';
     MnComponent,
     ByComponent,
     StatComponent,
-    UpDownComponent
+    UpDownComponent,
+    RuleChoiceComponent
   ],
   imports: [
     BrowserModule,
