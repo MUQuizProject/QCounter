@@ -1,10 +1,7 @@
-<h1>10 by 10</h1>
+<h1>10 up-down</h1>
 <div class="column-group horizontal-gutters">
   <div class="all-100 align-center number">
     {{points}}pts
-  </div>
-  <div class="all-100 align-center number-sub">
-    ({{ right }} by {{ miss_initial - miss }})
   </div>
   <div class="all-50">
     <div class="column-group">
@@ -27,17 +24,3 @@
     <button class="ink-button push-center button_function-text" (click)="reset()">Reset</button>
   </div>
 </div>
-<h2>Configulation</h2>
-<form [formGroup]="configForm" (submit)="changeParameters()" class="ink-form">
-  <div class="all-50 column-group gutters">
-    <div class="control-group all-100 validation" [class.error]="missInitial.hasError('notInteger') && !missInitial.hasError('required')">
-      <label for="right">誤答pt初期値</label>
-      <div class="control">
-        <input type="text" placeholder="1" formControlName="missInitial">
-      </div>
-    </div>
-    <div class="all-100">
-      <button class="ink-button green button_function-text" type="submit" [disabled]="!configForm.valid">Change!</button>
-    </div>
-  </div>
-</form>

@@ -7,9 +7,9 @@
                 <li><a [routerLink]="['/simple']">Simple</a></li>
                 <li><a [routerLink]="['/mn']">+m/-n</a></li>
                 <li><a [routerLink]="['/by']">10 by 10</a></li>
-                <li class="disabled"><a href="javascript:void(0);">Swedish 10</a></li>
-                <li class="disabled"><a href="javascript:void(0);">10 up-down</a></li>
-                <li class="disabled"><a href="javascript:void(0);">10 divide 10</a></li>
+                <li><a [routerLink]="['/updown']">10 up-down</a></li>
+                <li class="submenu--disabled"><a href="javascript:void(0);">Swedish 10</a></li>
+                <li class="submenu--disabled"><a href="javascript:void(0);">10 divide 10</a></li>
             </ul>
         </li>
         <li><a [routerLink]="['/stat']">Stat</a></li>
@@ -21,3 +21,5 @@
     Coded by M Uesaka
   </footer>
 </div>
+<script type="text/javascript" src="assets/js/ink-all.min.js"></script>
+<script type="text/javascript" src="assets/js/autoload.min.js"></script>

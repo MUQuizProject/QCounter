@@ -10,3 +10,22 @@
 .point {
   text-align: center;
 }
+
+.button-text {
+  font-size: 1.5em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+.button_function-text {
+  font-size: 1.5em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+li .submenu--disabled {
+  color: #ccc;
+  background-color: #333;
+}

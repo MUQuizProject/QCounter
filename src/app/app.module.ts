@@ -11,6 +11,7 @@ import { MnComponent } from './mn/mn.component';
 import { ByComponent } from './by/by.component';
 import { StatComponent } from './stat/stat.component';
 import { StatService } from './stat.service';
+import { UpDownComponent } from './up-down/up-down.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StatService } from './stat.service';
     ExplainComponent,
     MnComponent,
     ByComponent,
-    StatComponent
+    StatComponent,
+    UpDownComponent
   ],
   imports: [
     BrowserModule,
