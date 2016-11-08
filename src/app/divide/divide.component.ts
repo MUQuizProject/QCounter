@@ -63,7 +63,7 @@ export class DivideComponent implements OnInit {
   reset():void {
     this.right      = 0;
     this.miss       = 0;
-    this.points     = 0;
+    this.points     = 10;
     this.undo_stack = [];
   }
 }
