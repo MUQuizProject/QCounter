@@ -10,24 +10,26 @@ import { configValidator } from './validator';
   styleUrls  : ['./mn.component.scss']
 })
 export class MnComponent implements OnInit {
-  right     : number;
-  miss      : number;
-  points    : number;
-  right_plus: number;
-  miss_minus: number;
-  undo_stack: MnInterface[];
-  configForm: FormGroup;
+  right            : number;
+  miss             : number;
+  points           : number;
+  right_plus       : number;
+  miss_minus       : number;
+  undo_stack       : MnInterface[];
+  configForm       : FormGroup;
+  is_config_visible: boolean;
 
   rightPlus = new FormControl("",Validators.compose([Validators.required, configValidator]));
   missMinus = new FormControl("",Validators.compose([Validators.required, configValidator]));
 
   constructor(fb:FormBuilder, private statService: StatService) {
-    this.right      = 0;
-    this.miss       = 0;
-    this.points     = 0;
-    this.right_plus = 1;
-    this.miss_minus = 1;
-    this.undo_stack = [];
+    this.right             = 0;
+    this.miss              = 0;
+    this.points            = 0;
+    this.right_plus        = 1;
+    this.miss_minus        = 1;
+    this.undo_stack        = [];
+    this.is_config_visible = false;
     this.configForm = fb.group({
       rightPlus: this.rightPlus,
       missMinus: this.missMinus
@@ -72,5 +74,9 @@ export class MnComponent implements OnInit {
     this.miss       = 0;
     this.points     = 0;
     this.undo_stack = [];
+  }
+
+  toggleConfigVisible():void {
+    this.is_config_visible = !(this.is_config_visible);
   }
 }

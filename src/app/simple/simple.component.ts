@@ -15,7 +15,7 @@ export class SimpleComponent implements OnInit {
   constructor(private statService: StatService) {
     this.right      = 0;
     this.miss       = 0;
-    this.undo_stack = [{right: 0, miss: 0}];
+    this.undo_stack = [];
   }
 
   ngOnInit() {

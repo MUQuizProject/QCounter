@@ -10,24 +10,26 @@ import { StatService } from '../stat.service';
   styleUrls  : ['./by.component.scss']
 })
 export class ByComponent implements OnInit {
-  right       : number;
-  miss        : number;
-  points      : number;
-  miss_initial: number;
-  undo_stack  : MnInterface[];
-  configForm  : FormGroup;
+  right            : number;
+  miss             : number;
+  points           : number;
+  miss_initial     : number;
+  undo_stack       : MnInterface[];
+  configForm       : FormGroup;
+  is_config_visible: boolean;
 
   missInitial = new FormControl("",Validators.compose([Validators.required, configValidator]));
 
   constructor(fb:FormBuilder, private statService: StatService) {
-    this.right        = 0;
-    this.miss         = 0;
-    this.points       = 0;
-    this.miss_initial = 10;
-    this.undo_stack   = [];
-    this.configForm   = fb.group({
+    this.right             = 0;
+    this.miss              = 0;
+    this.points            = 0;
+    this.miss_initial      = 10;
+    this.undo_stack        = [];
+    this.configForm        = fb.group({
       missInitial: this.missInitial
     });
+    this.is_config_visible = false;
   }
 
   ngOnInit() {
@@ -60,6 +62,7 @@ export class ByComponent implements OnInit {
   changeParameters():void {
     console.log(this.configForm.value);
     this.miss_initial = parseInt(this.configForm.value.missInitial);
+    this.calculate();
   }
 
   reset():void {
@@ -71,5 +74,9 @@ export class ByComponent implements OnInit {
 
   private calculate():void {
     this.points = this.right * (this.miss_initial - this.miss)
+  }
+
+  toggleConfigVisible():void {
+    this.is_config_visible = !(this.is_config_visible);
   }
 }
