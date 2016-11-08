@@ -3,18 +3,18 @@ import { SimpleInterface } from "../qcinterface";
 import { StatService } from "../stat.service";
 
 @Component({
-  selector: 'app-simple',
+  selector   : 'app-simple',
   templateUrl: './simple.component.html',
-  styleUrls: ['./simple.component.css']
+  styleUrls  : ['./simple.component.css']
 })
 export class SimpleComponent implements OnInit {
-  right: number;
-  miss: number;
+  right     : number;
+  miss      : number;
   undo_stack: SimpleInterface[];
 
   constructor(private statService: StatService) {
-    this.right = 0;
-    this.miss  = 0;
+    this.right      = 0;
+    this.miss       = 0;
     this.undo_stack = [{right: 0, miss: 0}];
   }
 
@@ -34,8 +34,8 @@ export class SimpleComponent implements OnInit {
   }
 
   reset():void {
-    this.right = 0;
-    this.miss  = 0;
+    this.right      = 0;
+    this.miss       = 0;
     this.undo_stack = [];
   }
 

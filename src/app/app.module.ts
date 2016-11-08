@@ -14,6 +14,7 @@ import { StatService } from './stat.service';
 import { UpDownComponent } from './up-down/up-down.component';
 import { RuleChoiceComponent } from './rule-choice/rule-choice.component';
 import { SwedishComponent } from './swedish/swedish.component';
+import { DivideComponent } from './divide/divide.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SwedishComponent } from './swedish/swedish.component';
     StatComponent,
     UpDownComponent,
     RuleChoiceComponent,
-    SwedishComponent
+    SwedishComponent,
+    DivideComponent
   ],
   imports: [
     BrowserModule,

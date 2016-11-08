@@ -9,15 +9,15 @@ import { MnInterface } from '../qcinterface';
   styleUrls: ['./up-down.component.scss']
 })
 export class UpDownComponent implements OnInit {
-  right: number;
-  miss: number;
-  points: number;
+  right     : number;
+  miss      : number;
+  points    : number;
   undo_stack: MnInterface[];
 
   constructor(private statService: StatService) {
-    this.right = 0;
-    this.miss = 0;
-    this.points = 0;
+    this.right      = 0;
+    this.miss       = 0;
+    this.points     = 0;
     this.undo_stack = [];
   }
   ngOnInit() {
@@ -40,17 +40,17 @@ export class UpDownComponent implements OnInit {
   undo():void {
     if(this.undo_stack.length !== 0){
       var previous_points: MnInterface = this.undo_stack.pop();
-      this.right = previous_points.right;
-      this.miss  = previous_points.miss;
+      this.right  = previous_points.right;
+      this.miss   = previous_points.miss;
       this.points = previous_points.points;
       this.statService.undo();
     }
   }
 
   reset():void {
-    this.right = 0;
-    this.miss  = 0;
-    this.points = 0;
+    this.right      = 0;
+    this.miss       = 0;
+    this.points     = 0;
     this.undo_stack = [];
   }
 }

@@ -9,14 +9,12 @@ import { Subscription } from 'rxjs/subscription';
 })
 export class StatComponent implements OnInit {
   total_right: number;
-  total_miss: number;
+  total_miss : number;
 
   constructor(private statService: StatService) {}
 
   ngOnInit() {
   }
 
-  reset() {
-    this.statService.reset();
-  }
+  reset() {　this.statService.reset();　}
 }

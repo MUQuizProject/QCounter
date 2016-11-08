@@ -8,6 +8,7 @@ import { StatComponent } from './stat/stat.component';
 import { UpDownComponent } from './up-down/up-down.component';
 import { RuleChoiceComponent } from './rule-choice/rule-choice.component';
 import { SwedishComponent } from './swedish/swedish.component';
+import { DivideComponent } from './divide/divide.component';
 
 export const routes: Routes = [
   { path: '', component: ExplainComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'stat', component: StatComponent },
   { path: 'updown', component: UpDownComponent },
   { path: 'swedish', component: SwedishComponent },
+  { path: 'divide', component: DivideComponent },
   { path: 'explain', component: ExplainComponent },
   { path: 'rule', component: RuleChoiceComponent }
 ];

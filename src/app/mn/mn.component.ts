@@ -5,14 +5,14 @@ import { StatService } from '../stat.service';
 import { configValidator } from './validator';
 
 @Component({
-  selector: 'app-mn',
+  selector   : 'app-mn',
   templateUrl: './mn.component.html',
-  styleUrls: ['./mn.component.scss']
+  styleUrls  : ['./mn.component.scss']
 })
 export class MnComponent implements OnInit {
-  right: number;
-  miss: number;
-  points: number;
+  right     : number;
+  miss      : number;
+  points    : number;
   right_plus: number;
   miss_minus: number;
   undo_stack: MnInterface[];
@@ -22,9 +22,9 @@ export class MnComponent implements OnInit {
   missMinus = new FormControl("",Validators.compose([Validators.required, configValidator]));
 
   constructor(fb:FormBuilder, private statService: StatService) {
-    this.right = 0;
-    this.miss = 0;
-    this.points = 0;
+    this.right      = 0;
+    this.miss       = 0;
+    this.points     = 0;
     this.right_plus = 1;
     this.miss_minus = 1;
     this.undo_stack = [];
@@ -54,8 +54,8 @@ export class MnComponent implements OnInit {
   undo():void {
     if(this.undo_stack.length !== 0){
       var previous_points: MnInterface = this.undo_stack.pop();
-      this.right = previous_points.right;
-      this.miss  = previous_points.miss;
+      this.right  = previous_points.right;
+      this.miss   = previous_points.miss;
       this.points = previous_points.points;
       this.statService.undo();
     }
@@ -68,9 +68,9 @@ export class MnComponent implements OnInit {
   }
 
   reset():void {
-    this.right = 0;
-    this.miss  = 0;
-    this.points = 0;
+    this.right      = 0;
+    this.miss       = 0;
+    this.points     = 0;
     this.undo_stack = [];
   }
 }
